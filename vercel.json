@@ -1,7 +1,5 @@
 {
-    "build": {
-            "command": "vite build"
-            },
+    
     "routes": [
   {
     "src": "/(.*)",
