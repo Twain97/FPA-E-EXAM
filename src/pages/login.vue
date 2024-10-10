@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import camPage from "@/views/cam-page.vue"
+import camPage from "@/views/camPage.vue"
 
 export default {
   components:{
