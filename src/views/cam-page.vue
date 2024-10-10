@@ -39,7 +39,7 @@ import { db,} from '@/firebase/firebase';
 import { getDoc, doc  } from 'firebase/firestore';
 import { useStore } from 'vuex';
 const network = navigator.onLine;
-const URL = "./src/model3/";
+const URL = "./#/src/model3/";
 let running = true // to control the activity of the model&webcam loop
 let model, webcam, labelContainer, maxPredictions, prediction;
 export default{
