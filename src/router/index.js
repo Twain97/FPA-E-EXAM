@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import landingPage from '@/pages/landing-page.vue'
-import login from '@/pages/log-in.vue'
-import signup from '@/pages/sign-up.vue'
-import home from "@/pages/home-page.vue"
-import examPage from "@/pages/exam-page.vue"
-import scorePage from "@/pages/score-page.vue"
+import landingPage from '@/pages/landingPage.vue'
+import login from '@/pages/login.vue'
+import signup from '@/pages/signup.vue'
+import home from "@/pages/homePage.vue"
+import examPage from "@/pages/examPage.vue"
+import scorePage from "@/pages/scorePage.vue"
 import confirmSignup from '@/views/confirmSignup.vue'
 import confirmScore from '@/views/confirmScore.vue'
 import manualLogin from '@/pages/manualLogin.vue'
