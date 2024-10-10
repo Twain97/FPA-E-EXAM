@@ -1,12 +1,16 @@
 <template>
   <div>
-    This is log in page.
+    <camPage />
   </div>
 </template>
 
 <script>
-export default {
+import camPage from "@/views/cam-page.vue"
 
+export default {
+  components:{
+    camPage
+  }
 }
 </script>
 
