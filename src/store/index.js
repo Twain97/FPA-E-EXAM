@@ -179,7 +179,42 @@ const store = createStore({
             try{
                 await signInWithEmailAndPassword(auth, email, password);
             }catch(error){
-                console.log(error)
+                switch(error.code){
+                    case 'auth/invalid-email':
+                        alert('Invalid email')
+                        break;
+                    case 'auth/user-disabled':
+                        alert('User disabled')
+                        break;
+                    case 'auth/user-not-found':
+                        alert('User not found')
+                        break;
+                    case 'auth/wrong-password':
+                        alert('Wrong password')
+                        break;
+                    case 'auth/missing-password':
+                        alert('Missing password')
+                        break;
+                    case 'auth/missing-email':
+                        alert('Missing email')
+                        break;
+                    case 'auth/invalid-password':
+                        alert('Invalid password')
+                        break;
+                    case 'auth/operation-not-allowed':
+                        alert('Operation not allowed')
+                        break;
+                    case 'auth/network-request-failed':
+                        alert('Network request failed')
+                        break;
+                    case 'auth/too-many-requests':
+                        alert('Too many requests')
+                        break;
+                    default:
+                        alert('Something went wrong')
+                        break;
+                }
+                return;
             }
             commit('setUser', auth.currentUser.displayName);
             router.push('/admin')

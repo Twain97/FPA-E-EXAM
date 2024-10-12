@@ -119,12 +119,14 @@ auth.onAuthStateChanged((user)=>{
     if(to.path == '/admin' && !auth.currentUser){
       return router.push('/')
     }
-    // if(to.path == '/admin' && auth.currentUser){
-    //   if(auth.currentUser.displayName != 'admin'){
-    //     console.log("Authenticated user intruding to admin page")
-    //     return router.push('/home') // Ha! Nobody goes into the admin page but the admin alone(*_*)
-    //   }
-    // }
+    if(to.path == '/admin' && auth.currentUser){
+      if(auth.currentUser.displayName != 'admin'){
+        console.log("Authenticated user intruding to admin page")
+        alert("You are not authorized to view this page!")
+        await auth.signOut(auth);
+        return router.push('/') // Ha! Nobody goes into the admin page but the admin alone(*_*)
+      }
+    }
     if(to.path == '/Home' && !auth.currentUser){
       return router.push('/')
     }
