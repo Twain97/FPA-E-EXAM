@@ -15,7 +15,8 @@
                         <div id="webcam-container" class="rounded-full w-fit h-fit -scroll-my-10 mx-auto overflow-hidden border-2 border-purple-700"></div>
                         <div class="flex w-full space-x-5 mx-auto">
                             <div id="label-container" class="rounded-xl text-sm md:text-base">Please wait while the system load...</div>
-                            <button type="button" @click="stopVid()" class="rounded-lg px-4 py-0 shadow-md border-4 border-purple-900 bg-slate-200 text-sm md:text-base font-semibold">Stop Camera</button>
+                            <!-- <button v-if="stopButton" type="button" @click="stopVid()" class="rounded-lg px-4 py-0 shadow-md border-4 border-purple-900 bg-slate-200 text-sm md:text-base font-semibold">Stop Camera</button>
+                            <button v-else type="button" @click="startVid()" class="rounded-lg px-4 py-0 shadow-md border-4 border-purple-900 bg-slate-200 text-sm md:text-base font-semibold">Start Camera</button> -->
                         </div>
                     </div>
                 </div>
@@ -46,6 +47,8 @@ export default{
     data(){
         return{
             showPage:true,
+            startButton:false,
+            stopButton:true
         }
     },
     beforeMounted(){
@@ -165,16 +168,19 @@ export default{
 
     methods:{
         toggleShowProductPage(){
-            router.push('/')
-            running=false;
-            this.showPage=false;
+            webcam.stop();
+            running=false
+            router.push('/');
         },
         stopVid(){
             webcam.stop();
-            running=false;
-            this.showPage=false;
-        }
-    }
+            running = false;
+            this.startButton = true;
+            this.stopButton = false;
+        },
+        
+    },
+
 }
 
 </script>
